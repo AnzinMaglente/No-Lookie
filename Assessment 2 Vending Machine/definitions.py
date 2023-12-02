@@ -219,88 +219,59 @@ def product_menu_start(product_id, product):
 
 def show_product(shopping_cart):
     print("Here are your products:")
-    cart_check = False
-    
-    while cart_check == False:
+
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'chips'), None)
+    if dict_find is not None:
+        print("\tChips:")
         for product in shopping_cart:
-            if product['type']  == "chips": 
-                print("\tChips:")
-                for product in shopping_cart:
-                    if product['type']  == "chips":
-                        print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "chips":
+                print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
+        print("")
     
-    while cart_check == False:
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'chocolates'), None)
+    if dict_find is not None:
+        print("\tChocolates:")
         for product in shopping_cart:
-            if product['type']  == "chocolates": 
-                print("\tChocolates:")
-                for product in shopping_cart:
-                    if product['type']  == "chocolates":
-                        print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "chocolates":
+                print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
+        print("")
     
-    while cart_check == False:
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'pastries'), None)
+    if dict_find is not None:
+        print("\tPastries:")
         for product in shopping_cart:
-            if product['type']  == "pastries": 
-                print("\tPastries:")
-                for product in shopping_cart:
-                    if product['type']  == "pastries":
-                        print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "pastries":
+                print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
+        print("")
     
-    while cart_check == False:
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'drinks'), None)
+    if dict_find is not None:
+        print("\tDrinks:")
         for product in shopping_cart:
-            if product['type']  == "drinks": 
-                print("\tDrinks:")
-                for product in shopping_cart:
-                    if product['type']  == "drinks":
-                        print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "drinks":
+                print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
+        print("")
     
-    while cart_check == False:
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'softdrinks'), None)
+    if dict_find is not None:
+        print("\tSoft Drinks:")
         for product in shopping_cart:
-            if product['type']  == "softdrinks": 
-                print("\tSoft Drinks:")
-                for product in shopping_cart:
-                    if product['type']  == "softdrinks":
-                        print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "softdrinks":
+                print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
+        print("")
     
-    while cart_check == False:
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'juice'), None)
+    if dict_find is not None:
+        print("\tJuice:")
         for product in shopping_cart:
-            if product['type']  == "juice": 
-                print("\tJuice:")
-                for product in shopping_cart:
-                    if product['type']  == "juice":
-                        print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "juice":
+                print("\t\t" + product['item'] + " for " + str(product['price']) + " dhs")
+        print("")
     
-    while cart_check == False:
+    dict_find = next ((product for product in shopping_cart if product['type'] == 'bundle'), None)
+    if dict_find is not None:
+        print("\tBundles:")
         for product in shopping_cart:
-            if product['type']  == "bundle": 
-                print("\tBundles:")
-                for product in shopping_cart:
-                    if product['type']  == "bundle":
-                        print("\t\t" + product['item'] + " and " + product['bundle_item'] + " for " + str(product['price']) + " dhs")
-                print("")
-                cart_check = True
-        cart_check = True
-    cart_check = False
+            if product['type']  == "bundle":
+                print("\t\t" + product['item'] + " and " + product['bundle_item'] + " for " + str(product['price']) + " dhs")
+        print("")
