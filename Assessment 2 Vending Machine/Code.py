@@ -51,9 +51,9 @@ while check == False:
     
     product_id = input("Please input the product ID, you would want to buy: ")
     #This allows the user to select an item to add to their shopping cart.
-        
+    
     definitions.product_id_assurance(product_id)
-
+    
     cur = conn.cursor()
     qry = cur.execute("SELECT product_id FROM Item_Database")
     res = qry.fetchall()
