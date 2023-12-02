@@ -4,18 +4,33 @@ Created on Tue Nov 21 10:12:30 2023
 
 @author: Anzin R. Maglente
 """
+
 import definitions
 import sqlite3
 conn = sqlite3.connect("Item List.db")
+#This is a comment:
+"""Above this line, shows two connections to different files
+        Definitions is the other part of this code, where you can find several functions that speeds
+        up several processes.
+        SQlite3('Item List.db') on the other hand, connects this file to my database which has the
+        product_id, item, price, bundle, type, and amount of each product"""
 
-shopping_cart = []
+shopping_cart = [] #This creates a list where the bought products will end up in. 
 product_id = ("None")
 check = False
 current_price = 0.0
 total_price = float(0)
+money_check = False
+current_money = 0.0
+change_money = 0.0
+#Above are variables that will be used later.
 
 input("""Hello, welcome to the vending machine. This program was made by Anzin R. Maglente, 
 if you find any errors please message him. Now without further adio, let us begin.\n""")
+
+#This is a comment:
+"""The while loop below allows the program to loop until the user is satisfied with
+their selections, it allows for multiple products to be selected from the vending machine."""
 
 while check == False:
     product = {
@@ -25,11 +40,43 @@ while check == False:
             'type' : 'd',
             'bundle_item' : 'None',
             }
+    #This is the product's values that are impacted by the user's input.
     
-    definitions.product_list()
-
+    definitions.product_list() 
+    #This is a comment:
+    """
+    This line of code gets a definitions called "product_list()" from the definitions file. 
+    Which shows off the products, their price, and the amount left on the product.
+    """
+    
     product_id = input("Please input the product ID, you would want to buy: ")
+    #This allows the user to select an item to add to their shopping cart.
+    
+    cur = conn.cursor()
+    qry = cur.execute("SELECT product_id FROM Item_Database")
+    res = qry.fetchall()
+    database_list = [x[0] for x in res]
+    if product_id in database_list:
+        print("")
+        cur = conn.cursor()
+        qry = cur.execute("SELECT amount, item, price, type FROM Item_Database WHERE product_id=?", (product_id,))
+        res = qry.fetchone()
+        product['amount'] = res[0]
+        if product['amount'] > 0:
+            product['item'] = res[1]
+            product['price'] = res[2]
+            product['type'] = res[3]
+            definitions.decrease_amount(product_id)
+            print ("You added " + product['item'] + " to your cart, it cost " + str(product['price']) + " and it is in the " + product['type'] + " category.")
+        else:
+            input("Sorry, but the item you selected ran out. Please choose again. ")
+            continue
+    else:
+        input("Sorry, our system did not recognize your answer please try again. ")
+        continue
+    
     definitions.product_menu_start(product_id, product)
+    #
 
     if product['item'] == 'Doritos Nacho Cheese' or product['item'] == 'Sprite':
         if product['item'] == 'Doritos Nacho Cheese':
@@ -75,7 +122,7 @@ while check == False:
             p2 = product['bundle_item']
             definitions.bundle_check(product_id, product, previous_product_id, p1, p2)
 
-    elif product['item'] == 'Lays French Cheese' or  product['item'] == 'Coke':
+    elif product['item'] == 'Lays French Cheese' or product['item'] == 'Coke':
         if product['item'] == 'Lays French Cheese':
             previous_product_id = product_id
             p1 = product['item']
@@ -231,9 +278,6 @@ input("\nProcessing order...\n")
 print("Your total purchase is " + str(total_price) + " dhs\n")
 definitions.show_product(shopping_cart)
 
-money_check = False
-current_money = 0.0
-change_money = 0.0
 while money_check == False:
     if current_money >= total_price:
         change_money = current_money - total_price
