@@ -191,13 +191,13 @@ def product_id_assurance(product_id):
     elif product_id == "d3":
         product_id = "D3"
         return product_id
-    elif product_id == "sd1" or "Sd1":
+    elif product_id == "sd1" or product_id == "Sd1":
         product_id = "SD2"
         return product_id
-    elif product_id == "sd2" or "Sd2":
+    elif product_id == "sd2" or product_id == "Sd2":
         product_id = "SD2"
         return product_id
-    elif product_id == "sd3" or "Sd3":
+    elif product_id == "sd3" or product_id == "Sd3":
         product_id = "SD3"
         return product_id
     elif product_id == "j1":
@@ -240,14 +240,14 @@ def bundle_decision(product_id, product, previous_product_id, p1, p2):
         print(f"""\nThere seems to be a bundle associated with your purchase, would you like to apply for it?
 {p1} and {p2} for only {new_price} dhs.\t""")
         answer = input('\nPlease write "Yes" or "No": ')
-        if answer == 'Yes':
+        if answer == 'Yes' or answer == 'yes' or answer == 'YES' or answer == 'y':
             product['price'] = new_price
             product['type'] = 'bundle'
             print("\nThat will be " + str(product['price']) + " dhs, would you like anything else?\n")
             decrease_amount(product_id)
             product_check = True
             return product
-        if answer == 'No':
+        if answer == 'No' or answer == 'no' or answer == 'NO' or answer == 'n':
             product_id = previous_product_id
             cur = conn.cursor()
             qry = cur.execute("SELECT amount, item, price, type, bundle_price, bundle_item FROM Item_Database WHERE product_id=?", (product_id,))
