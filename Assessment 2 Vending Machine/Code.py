@@ -309,9 +309,9 @@ while money_check == False:
                 print("Here are your products:")
                 for product in shopping_cart:
                     if product['type'] == "bundle":
-                        print("\n" + product['item'])
-                    else:
                         print("\n" + product['item'] + " and " + product['bundle_item'])
+                    else:
+                        print("\n" + product['item'])
                 print("Thank you for shopping with us.")
                 money_check = True
             else:
