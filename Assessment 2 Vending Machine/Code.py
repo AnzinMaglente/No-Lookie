@@ -228,7 +228,7 @@ for product in shopping_cart:
 
 input("\nProcessing order...\n")
 
-print("Your total purchase is " + str(total_price) + "\n")
+print("Your total purchase is " + str(total_price) + " dhs\n")
 definitions.show_product(shopping_cart)
 
 money_check = False
