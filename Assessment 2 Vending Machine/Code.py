@@ -319,17 +319,17 @@ while money_check == False:
 
     else:
         money = input("Please input either 25 fils, 50 fils, 1 dhs, 5 dhs, 10 dhs, or 20 dhs into the machine to get your ordered products: ")
-        if money == ("25 fils"):
+        if money == ("25 fils") or ("25 Fils") or ("0.25"):
             current_money += 0.25
-        elif money == ("50 fils"):
+        elif money == ("50 fils") or ("50 Fils") or ("0.50"):
             current_money += 0.25
-        elif money == ("1 dhs"):
+        elif money == ("1 dhs") or ("1 Dhs") or ("1"):
             current_money += 1
-        elif money == ("5 dhs"):
+        elif money == ("5 dhs") or ("5 Dhs") or ("5"):
             current_money += 5
-        elif money == ("10 dhs"):
+        elif money == ("10 dhs") or ("10 Dhs") or ("10"):
             current_money += 10
-        elif money == ("20 dhs"):
+        elif money == ("20 dhs") or ("20 Dhs") or ("20"):
             current_money += 20
         else:
             print("Sorry, our system did not recognize your answer please try again.\n")
