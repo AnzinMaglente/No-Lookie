@@ -2,7 +2,7 @@
 """
 Created on Sun Nov 19 16:10:23 2023
 
-@author: anzin
+@author: Anzin R. Maglente
 """
 import sqlite3
 conn = sqlite3.connect("Item List.db")
@@ -200,22 +200,6 @@ def bundle_decision(product_id, product, previous_product_id, p1, p2):
             return product
         else:
             print("Sorry, our system did not recognize your answer please try again.\n")
-
-def product_menu_start(product_id, product):
-    print("")
-    cur = conn.cursor()
-    qry = cur.execute("SELECT amount, item, price, type FROM Item_Database WHERE product_id=?", (product_id,))
-    res = qry.fetchone()
-    product['amount'] = res[0]
-    if product['amount'] > 0:
-        product['item'] = res[1]
-        product['price'] = res[2]
-        product['type'] = res[3]
-        decrease_amount(product_id)
-        print ("You added " + product['item'] + " to your cart, it cost " + str(product['price']) + " and it is in the " + product['type'] + " category.")
-        return product
-    else:
-        print ("Sorry, but the item you selected ran out. Please choose again.")
 
 def show_product(shopping_cart):
     print("Here are your products:")
