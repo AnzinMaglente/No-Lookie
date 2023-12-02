@@ -263,9 +263,9 @@ while check == False:
     continue_check = False
     while continue_check == False:
         continue_answer = input('Do you want to continue your shopping? Please enter "Yes" or "No" ')
-        if continue_answer == "Yes":
+        if continue_answer == 'Yes' or 'yes' or 'YES' or 'y':
             continue_check = True
-        elif continue_answer == "No":
+        elif continue_answer == 'No' or 'no' or 'NO' or 'n':
             check = True
             continue_check = True
         else:
