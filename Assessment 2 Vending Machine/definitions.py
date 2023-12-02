@@ -151,6 +151,65 @@ def product_list():
     Biscuit & Hot Coffee for only 4.52 dhs
     """)
 
+def product_id_assurance(product_id):
+    if product_id == "c1":
+        product_id = "C1"
+        return product_id
+    elif product_id == "c2":
+        product_id = "C2"
+        return product_id
+    elif product_id == "c3":
+        product_id = "C3"
+        return product_id
+    elif product_id == "c4":
+        product_id = "C4"
+        return product_id
+    elif product_id == "ch1":
+        product_id = "Ch1"
+        return product_id
+    elif product_id == "ch2":
+        product_id = "Ch2"
+        return product_id
+    elif product_id == "ch3":
+        product_id = "Ch3"
+        return product_id
+    elif product_id == "p1":
+        product_id = "P1"
+        return product_id
+    elif product_id == "p2":
+        product_id = "P2"
+        return product_id
+    elif product_id == "p3":
+        product_id = "P3"
+        return product_id
+    elif product_id == "d1":
+        product_id = "D1"
+        return product_id
+    elif product_id == "d2":
+        product_id = "D2"
+        return product_id
+    elif product_id == "d3":
+        product_id = "D3"
+        return product_id
+    elif product_id == "sd1" or "Sd1":
+        product_id = "SD2"
+        return product_id
+    elif product_id == "sd2" or "Sd2":
+        product_id = "SD2"
+        return product_id
+    elif product_id == "sd3" or "Sd3":
+        product_id = "SD3"
+        return product_id
+    elif product_id == "j1":
+        product_id = "J1"
+        return product_id
+    elif product_id == "j2":
+        product_id = "J2"
+        return product_id
+    elif product_id == "j3":
+        product_id = "J3"
+        return product_id
+
 def decrease_amount(product_id):
     cur = conn.cursor()
     qry = cur.execute("SELECT amount FROM Item_Database WHERE product_id=?", (product_id,))
