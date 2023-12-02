@@ -263,9 +263,9 @@ while check == False:
     continue_check = False
     while continue_check == False:
         continue_answer = input('Do you want to continue your shopping? Please enter "Yes" or "No" ')
-        if continue_answer == 'Yes' or 'yes' or 'YES' or 'y':
+        if continue_answer == 'Yes' or continue_answer == 'yes' or continue_answer == 'YES' or continue_answer == 'y':
             continue_check = True
-        elif continue_answer == 'No' or 'no' or 'NO' or 'n':
+        elif continue_answer == 'No' or continue_answer == 'no' or continue_answer == 'NO' or continue_answer == 'n':
             check = True
             continue_check = True
         else:
@@ -295,7 +295,7 @@ while money_check == False:
             money_check = True
         else:
             change_check = input('\nPlease enter "Yes" keep your change and "No" if you want to donate it to charity, it is ' + str(change_money) + ' dhs: ')
-            if change_check == 'Yes' or 'yes' or 'YES' or 'y':
+            if change_check == 'Yes':
                 print("\nHere is your change: " + str(change_money))
                 print("\n~~ A sound is heard in the opening beneath ~~\n")
                 print("Here are your products:")
@@ -306,7 +306,7 @@ while money_check == False:
                         print("\t" + product['item'])
                 print("\nThank you for shopping with us.")
                 money_check = True
-            elif change_check == 'No' or 'no' or 'NO' or 'n':
+            elif change_check == 'No':
                 print("\n~~ A sound is heard in the opening beneath ~~\n")
                 print("Here are your products:")
                 for product in shopping_cart:
@@ -321,17 +321,17 @@ while money_check == False:
 
     else:
         money = input("Please input either 25 fils, 50 fils, 1 dhs, 5 dhs, 10 dhs, or 20 dhs into the machine to get your ordered products: ")
-        if money == ("25 fils") or ("25 Fils") or ("0.25"):
+        if money == ("25 fils") or money == ("25 Fils") or money == ("0.25"):
             current_money += 0.25
-        elif money == ("50 fils") or ("50 Fils") or ("0.50"):
+        elif money == ("50 fils") or money == ("50 Fils") or money == ("0.50"):
             current_money += 0.25
-        elif money == ("1 dhs") or ("1 Dhs") or ("1"):
+        elif money == ("1 dhs") or money == ("1 Dhs") or money == ("1"):
             current_money += 1
-        elif money == ("5 dhs") or ("5 Dhs") or ("5"):
+        elif money == ("5 dhs") or money == ("5 Dhs") or money == ("5"):
             current_money += 5
-        elif money == ("10 dhs") or ("10 Dhs") or ("10"):
+        elif money == ("10 dhs") or money == ("10 Dhs") or money == ("10"):
             current_money += 10
-        elif money == ("20 dhs") or ("20 Dhs") or ("20"):
+        elif money == ("20 dhs") or money == ("20 Dhs") or money == ("20"):
             current_money += 20
         else:
             print("Sorry, our system did not recognize your answer please try again.\n")
