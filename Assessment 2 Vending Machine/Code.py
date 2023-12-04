@@ -318,7 +318,9 @@ while money_check == False:
                 print("Sorry, our system did not recognize your answer please try again.\n")
 
     else:
-        money = input("Please input either 25 fils, 50 fils, 1 dhs, 5 dhs, 10 dhs, or 20 dhs into the machine to get your ordered products: ")
+        print("\nThe money you have currently inputed: " + current_money)
+        print("Total price: " + str(total_price))
+        money = input("\nPlease input either 25 fils, 50 fils, 1 dhs, 5 dhs, 10 dhs, or 20 dhs into the machine to get your ordered products: ")
         if money == ("25 fils") or money == ("25 Fils") or money == ("0.25"):
             current_money += 0.25
         elif money == ("50 fils") or money == ("50 Fils") or money == ("0.50"):
