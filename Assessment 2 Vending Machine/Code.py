@@ -294,7 +294,7 @@ while money_check == False:
         else:
             change_check = input('\nPlease enter "Yes" keep your change and "No" if you want to donate it to charity, it is ' + str(change_money) + ' dhs: ')
             if change_check == 'Yes':
-                print("\nHere is your change: " + str(change_money))
+                print("\nHere is your change: " + str(change_money) + " dhs")
                 print("\n~~ A sound is heard in the opening beneath ~~\n")
                 print("Here are your products:")
                 for product in shopping_cart:
