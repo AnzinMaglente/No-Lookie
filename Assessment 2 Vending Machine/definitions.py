@@ -238,7 +238,7 @@ def bundle_decision(product_id, product, previous_product_id, p1, p2):
     product_check = False
     while product_check == False:
         print(f"""\nThere seems to be a bundle associated with your purchase, would you like to apply for it?
-{p1} and {p2} for only {new_price} dhs.\t""")
+        {p1} and {p2} for only {new_price} dhs.\t""")
         answer = input('\nPlease write "Yes" or "No": ')
         if answer == 'Yes' or answer == 'yes' or answer == 'YES' or answer == 'y':
             product['price'] = new_price
