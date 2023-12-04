@@ -76,8 +76,6 @@ while check == False:
     else:
         input("Sorry, our system did not recognize your answer please try again. ")
         continue
-    
-    definitions.product_menu_start(product_id, product)
     #
 
     if product['item'] == 'Doritos Nacho Cheese' or product['item'] == 'Sprite':
