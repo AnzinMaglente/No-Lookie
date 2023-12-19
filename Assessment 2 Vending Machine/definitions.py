@@ -17,9 +17,10 @@ product = {
         }
 product_id = ("None")
 
-def product_list():
+
+def product_list(): #This function shows off the products choices arranged by it's type.
     product_type = "chips"
-    print("Formatting:\n\tProduct ID - Name - Price - Amount")
+    print("\nFormatting:\n\tProduct ID - Name - Price - Amount")
     
     print("\nChips:")
     while product_type == "chips":
@@ -27,117 +28,117 @@ def product_list():
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "C2"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "C3"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "C4"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_type = "chocolates"
 
-    print("Chocolates:")
+    print("\nChocolates:")
     while product_type == "chocolates":
         product_id = "Ch1"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "Ch2"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "Ch3"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_type = "pastries"
         
-    print("Pastries:")
+    print("\nPastries:")
     while product_type == "pastries":
         product_id = "P1"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "P2"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "P3"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_type = "drinks"
         
-    print("Drinks:")
+    print("\nDrinks:")
     while product_type == "drinks":
         product_id = "D1"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "D2"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "D3"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_type = "softdrinks"
         
-    print("Soft Drinks:")
+    print("\nSoft Drinks:")
     while product_type == "softdrinks":
         product_id = "SD1"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "SD2"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "SD3"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_type = "juice"
         
-    print("Juice:")
+    print("\nJuice:")
     while product_type == "juice":
         product_id = "J1"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "J2"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_id = "J3"
         cur = conn.cursor()
         qry = cur.execute("SELECT item, price, amount, type FROM Item_Database WHERE product_id=?", (product_id,))
         res = qry.fetchone()
-        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} pieces")
+        print (f"\t{product_id} - {res[0]} - {res[1]} dhs - {res[2]} left")
         product_type = "none"
         
     print ("""\nBundles (Just order one! It's 20% off!):
@@ -151,66 +152,7 @@ def product_list():
     Biscuit & Hot Coffee for only 4.52 dhs
     """)
 
-def product_id_assurance(product_id):
-    if product_id == "c1":
-        product_id = "C1"
-        return product_id
-    elif product_id == "c2":
-        product_id = "C2"
-        return product_id
-    elif product_id == "c3":
-        product_id = "C3"
-        return product_id
-    elif product_id == "c4":
-        product_id = "C4"
-        return product_id
-    elif product_id == "ch1":
-        product_id = "Ch1"
-        return product_id
-    elif product_id == "ch2":
-        product_id = "Ch2"
-        return product_id
-    elif product_id == "ch3":
-        product_id = "Ch3"
-        return product_id
-    elif product_id == "p1":
-        product_id = "P1"
-        return product_id
-    elif product_id == "p2":
-        product_id = "P2"
-        return product_id
-    elif product_id == "p3":
-        product_id = "P3"
-        return product_id
-    elif product_id == "d1":
-        product_id = "D1"
-        return product_id
-    elif product_id == "d2":
-        product_id = "D2"
-        return product_id
-    elif product_id == "d3":
-        product_id = "D3"
-        return product_id
-    elif product_id == "sd1" or product_id == "Sd1":
-        product_id = "SD2"
-        return product_id
-    elif product_id == "sd2" or product_id == "Sd2":
-        product_id = "SD2"
-        return product_id
-    elif product_id == "sd3" or product_id == "Sd3":
-        product_id = "SD3"
-        return product_id
-    elif product_id == "j1":
-        product_id = "J1"
-        return product_id
-    elif product_id == "j2":
-        product_id = "J2"
-        return product_id
-    elif product_id == "j3":
-        product_id = "J3"
-        return product_id
-
-def decrease_amount(product_id):
+def decrease_amount(product_id): #This decreases the amount of items in the database.
     cur = conn.cursor()
     qry = cur.execute("SELECT amount FROM Item_Database WHERE product_id=?", (product_id,))
     res = qry.fetchone()
@@ -219,7 +161,16 @@ def decrease_amount(product_id):
     conn.execute(qry,(amount, product_id))
     conn.commit()
 
-def bundle_check(product_id, product, previous_product_id, p1, p2):
+def increase_amount(product_id): #This incerease the amount of items in the database.
+    cur = conn.cursor()
+    qry = cur.execute("SELECT amount FROM Item_Database WHERE product_id=?", (product_id,))
+    res = qry.fetchone()
+    amount = int(res[0]) + 1
+    qry = "update Item_Database set amount=? where product_id=?;"
+    conn.execute(qry,(amount, product_id))
+    conn.commit()
+
+def bundle_check(product_id, product, previous_product_id, p1, p2): #This checks if the selected bundle still has a stock in the database.
     cur = conn.cursor()
     qry = cur.execute("SELECT amount, item, price, type FROM Item_Database WHERE product_id=?", (product_id,))
     res = qry.fetchone()
@@ -230,15 +181,15 @@ def bundle_check(product_id, product, previous_product_id, p1, p2):
         product['bundle_item'] = "None"
         return product
 
-def bundle_decision(product_id, product, previous_product_id, p1, p2):
+def bundle_decision(product_id, product, previous_product_id, p1, p2): #This provides the choices to buy the bundle or not.
     cur = conn.cursor()
     qry = cur.execute("SELECT amount, item, price, type, bundle_price, bundle_item FROM Item_Database WHERE product_id=?", (product_id,))
     res = qry.fetchone()
     new_price = float(res[4])
     product_check = False
     while product_check == False:
-        print(f"""\nThere seems to be a bundle associated with your purchase, would you like to apply for it?
-        {p1} and {p2} for only {new_price} dhs.\t""")
+        print(f"""\nThere seems to be a bundle associated with your purchase, would you like to apply for it? 
+{p1} and {p2} for only {new_price} dhs.\t""")
         answer = input('\nPlease write "Yes" or "No": ')
         if answer == 'Yes' or answer == 'yes' or answer == 'YES' or answer == 'y':
             product['price'] = new_price
@@ -260,7 +211,7 @@ def bundle_decision(product_id, product, previous_product_id, p1, p2):
         else:
             print("Sorry, our system did not recognize your answer please try again.\n")
 
-def show_product(shopping_cart):
+def show_product(shopping_cart): #This is the shopping cart where the user's products can be found.
     print("Here are your products:")
 
     dict_find = next ((product for product in shopping_cart if product['type'] == 'chips'), None)
